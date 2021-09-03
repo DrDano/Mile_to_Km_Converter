@@ -1,33 +1,44 @@
 from tkinter import *
 
-#Buttons
+
+# Button Action
 def action():
-   print("I got clicked")
+    conversion = 1.609 * float(user_input.get())
+    return conversion
 
 
 # Creating a new window and configurations
 window = Tk()
-window.title("My First GUI Program")
-window.minsize(width=500, height=300)
-window.config(padx=80, pady=200)
+window.title("Mile to Km Converter")
+window.minsize(width=300, height=100)
 
-# Labels
-label = Label(text="I Am a Label", font=("Arial", 24, "bold"))
-label.config(text="New Text")
-label.grid(column=0, row=0)
-label.config(padx=50, pady=50)
-
-# calls action() when pressed
-button = Button(text="Click Me", command=action)
-button.grid(column=1, row=1)
-
-# Button 2
-button2 = Button(text="Click Me", command=action)
-button2.grid(column=3, row=0)
-
-# Entries
 user_input = Entry(width=10)
 print(user_input.get())
-user_input.grid(column=4, row=4)
+user_input.grid(column=1, row=0)
+
+# Button
+button = Button(text="Calculate", command=action)
+button.grid(column=1, row=2)
+
+# Labels
+label = Label(text="is equal to", font=("Arial", 12, "normal"))
+label.grid(column=0, row=1)
+label.config(padx=20)
+
+# Labels
+label2 = Label(text="Km", font=("Arial", 12, "normal"))
+label2.grid(column=2, row=1)
+label2.config(padx=20)
+
+# Labels
+label3 = Label(text="Miles", font=("Arial", 12, "normal"))
+label3.grid(column=2, row=0)
+
+# Labels
+label4 = Label(text=action, font=("Arial", 12, "normal"))
+label4.grid(column=1, row=1)
 
 mainloop()
+
+
+
