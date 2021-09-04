@@ -3,7 +3,7 @@ from tkinter import *
 
 # Button Action
 def action():
-    conversion = 1.609 * float(user_input.get())
+    conversion = int(1.609) * user_input.get()
     return conversion
 
 
@@ -16,9 +16,7 @@ user_input = Entry(width=10)
 print(user_input.get())
 user_input.grid(column=1, row=0)
 
-# Button
-button = Button(text="Calculate", command=action)
-button.grid(column=1, row=2)
+button_text = action
 
 # Labels
 label = Label(text="is equal to", font=("Arial", 12, "normal"))
@@ -35,10 +33,13 @@ label3 = Label(text="Miles", font=("Arial", 12, "normal"))
 label3.grid(column=2, row=0)
 
 # Labels
-label4 = Label(text=action, font=("Arial", 12, "normal"))
+label4 = Label(text=button_text, font=("Arial", 12, "normal"))
 label4.grid(column=1, row=1)
 
-mainloop()
+# Button
+button = Button(text="Calculate", command=action)
+button.grid(column=1, row=2)
 
 
+window.mainloop()
 
