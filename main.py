@@ -1,12 +1,5 @@
 from tkinter import *
 
-
-# Button Action
-def action():
-    conversion = int(1.609) * user_input.get()
-    return conversion
-
-
 # Creating a new window and configurations
 window = Tk()
 window.title("Mile to Km Converter")
@@ -16,7 +9,15 @@ user_input = Entry(width=10)
 print(user_input.get())
 user_input.grid(column=1, row=0)
 
-button_text = action
+
+# Button Action
+def action():
+    conversion = int(1.609) * user_input.get()
+    return conversion
+
+
+result = action()
+
 
 # Labels
 label = Label(text="is equal to", font=("Arial", 12, "normal"))
@@ -33,7 +34,7 @@ label3 = Label(text="Miles", font=("Arial", 12, "normal"))
 label3.grid(column=2, row=0)
 
 # Labels
-label4 = Label(text=button_text, font=("Arial", 12, "normal"))
+label4 = Label(text=result, font=("Arial", 12, "normal"))
 label4.grid(column=1, row=1)
 
 # Button
